@@ -1,0 +1,28 @@
+.wrapper
+  .header
+    .search-box
+      .search-box__text
+      %input{:name => "q", :placeholder => "カスタム検索", :size => "50", :style => "background: ", :type => "text"}/
+      %input{:name => "sa", :type => "submit", :value => "検索"}/
+    .header__new-btn
+      %p 新規登録
+  .cards
+    .card-list
+      .card-image
+        -# = image_tag cards.image.url
+      .hospital-info
+        - @cards.each do |card|
+          .hospital-name
+            = simple_format(card.name) 
+          .hospital-holiday
+            = card.holiday
+
+  .footer
+    .footer__box
+      %ul.footer__box__menu
+        %li.footer__box__menu__medicine-info
+          aaa
+        %li.footer__box__menu__hospital-new
+          bbb
+        %li.footer__box__menu__user-info
+          ccc

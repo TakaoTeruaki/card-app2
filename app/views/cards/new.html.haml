@@ -1,0 +1,16 @@
+.contents.row
+  .container
+    = form_for @card do |f|
+      .input-box
+        -# = f.label :image, class: 'input-box__image', placeholder: "画像"
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'input-box__image__file'
+        = f.text_field :name, class: 'input-box__name',placeholder: "病院名"
+        = f.text_field :holiday, class: 'input-box__horiday',placeholder: "休診日"
+        = f.submit "登録"
+
+        -# = f.text_field :addles, class: 'input-box__addles',placeholder: "住所"
+        -# = f.text_field :tell, class: 'input-box__tell',placeholder: "電話"
+        -# = f.text_field :number, class: 'input-box__number', placeholder: "カードナンバー"
+        -# = f.text_field :jenre, class: 'input-box__jenre',placeholder: "何科"
